@@ -1,0 +1,218 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .box {
+    position: relative;
+    width: 450px;
+    height: 700px;
+    border: 2px solid rgba(255, 255, 255, 0.494);
+    background-color: rgb(39, 39, 39);
+    border-radius: 10px;
+    box-shadow: 0px 0px 100px 1px white; 
+    animation: ShadowAnimation 7s ease infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.container .box .headerImage {
+    width: 100%;
+    margin: 20px 0;
+    height: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .box .headerImage img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid rgb(255, 255, 255);
+    animation: imgAnimation 3s ease infinite;
+    box-shadow: 0px 0px 16px 1px white;
+}
+
+.container .box .titles {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .box .titles h2 {
+    color: white;
+    margin: 0;
+    letter-spacing: 1.5px;
+}
+
+.container .box .titles p {
+    color: rgba(255, 255, 255, 0.924);
+    text-align: center;
+}
+
+.massagrs {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.massagrs a {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.massagrs button {
+    position: relative;
+    width: 83px;
+    height: 83px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    transition: 0.4s;
+}
+
+.massagrs button:hover {
+    box-shadow: 0px 0px 15px 1px rgba(255, 255, 255, 0.422);
+}
+
+.massagrs button::after {
+    content: "";
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    backdrop-filter: blur(10px);
+    filter: blur(3.5px);
+    z-index: 2;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.041);
+}
+
+.massagrs button i {
+    z-index: 10;
+    font-size: 30px;
+    filter: blur(0); /* To remove blur on the icon */
+    z-index: 4;
+}
+
+.massagrs button h5 {
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    filter: blur(0); /* To remove blur on the text */
+    z-index: 4;
+}
+
+.footer {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 120px;
+    margin-top: 30px;
+}
+
+.footer .footerTitle {
+    width: 50%;
+    color: white;
+    margin: 0;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50%;
+    margin: 0;
+    gap: 5px;
+}
+
+.footer a i {
+    font-size: 12px;
+}
+
+@keyframes imgAnimation {
+    0% {
+        transform: translateY(-5px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes ShadowAnimation {
+    0% {
+        box-shadow: 0px 0px 100px 1px rgba(255, 0, 0, 0.301); 
+    }
+    20% {
+        box-shadow: 0px 0px 100px 1px rgba(220, 8, 213, 0.223); 
+    }
+    40% {
+        box-shadow: 0px 0px 100px 1px rgba(19, 42, 194, 0.161); 
+    }
+    60% {
+        box-shadow: 0px 0px 100px 1px rgba(9, 179, 201, 0.256); 
+    }
+    80% {
+        box-shadow: 0px 0px 100px 1px rgba(14, 198, 4, 0.252); 
+    }
+    100% {
+        box-shadow: 0px 0px 100px 1px rgba(203, 210, 7, 0.165); 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container .box {
+        width: 100%;
+        height: 100%;
+        border: none;
+        position: relative;
+    }
+    .footer {
+        gap: 0;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 30px;
+    }
+
+    .container .box .headerImage img {
+        width: 270px;
+        height: 270px;
+    }
+}
